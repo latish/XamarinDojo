@@ -24,9 +24,11 @@ namespace HelloDojo
 			// Get our button from the layout resource,
 			// and attach an event to it
 			Button button = FindViewById<Button> (Resource.Id.myButton);
+			var userName = FindViewById<TextView> (Resource.Id.userName);
+			var welcome = FindViewById<TextView> (Resource.Id.welcome);
 			
 			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
+				welcome.Text = string.Format ("Welcome, {0}", userName.Text);
 			};
 		}
 	}
